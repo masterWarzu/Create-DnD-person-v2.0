@@ -1,0 +1,83 @@
+import java.util.*;
+
+public class Races
+{
+    //====================================- рандом расы -===================================================================
+    static String Race()
+    {
+        String[] array = RaceArray();
+        int size = array.length;
+        Random rand = new Random();
+        int choice = rand.nextInt(size);
+        return array[choice];
+    }
+
+    public static String[] RaceArray()  // список рас для выбора
+    {
+        String[] races_array = {"Дварф", "Эльф", "Полурослик", "Человек", "Драконорожденный", "Гном", "Полуэльф",
+                "Полуорк", "Тифлинг"};
+        return races_array;
+    }
+
+    public static void RaceChoice() // вызывает генератор характеристик для каждой расы.
+    {
+        switch (Race())
+        {
+            case "Дварф" -> Dwarf();
+            case "Эльф" -> Elf();
+            case "Полурослик" -> Halfling();
+            case "Человек" -> Human();
+        }
+    }
+
+    public static void Dwarf()  // генерирует характеристики для расы дварфов (автоматический режим).
+    {
+        System.out.println();
+        // Телосложение + 2
+
+        System.out.println("Возраст: " + Start.RandAll(25, 200) + " лет."); // возраст, до 370 лет
+        System.out.println("Рост: " + Start.RandAll(122, 152) + " см.");    // рост: 122 - 152 см
+        System.out.println("Вес: " + Start.RandAll(68, 75) + " кг.");    // вес в районе 68-75 кг
+        System.out.println("Размер: Средний.");   // размер средний
+        System.out.println("Скорость: 25 футов [5 клеток]");    // скорость 25 футов (5 клеток) Ношение тяжелых доспехов не снижает скорость
+        // Темное зрение (добавить описание)
+        // Дварфская устойчивость (добавить описание)
+        // Дварфская боевая тренировка (добавить описание)
+        // Владение инструментами (добавить описание)
+        // Знание камня (добавить описание)
+        // Языки
+        // Разновидности
+            // * Горный дварф (добавить описание)
+            // * Холмовой дварф (добавить описание)
+    }
+
+    public static void Elf()    // генерирует характеристики для расы эльфов (автоматический режим).
+    {
+        System.out.println();
+        System.out.println("Возраст: " + Start.RandAll(100, 750) + " лет.");
+        System.out.println("Рост: " + Start.RandAll(152, 183) + " см.");
+        System.out.println("Вес: " + Start.RandAll(45, 65) + " кг.");
+        System.out.println("Размер: Средний.");
+        System.out.println("Скорость: 30 футов [6 клеток]");
+    }
+
+    public static void Halfling()   // генерирует характеристики для расы полуросликов (автоматический режим).
+    {
+        System.out.println();
+        System.out.println("Возраст: " + Start.RandAll(30, 130) + " лет.");
+        System.out.println("Рост: " + Start.RandAll(87, 93) + " см.");
+        System.out.println("Вес: " + Start.RandAll(16, 20) + " кг.");
+        System.out.println("Размер: Маленький.");
+        System.out.println("Скорость: 25 футов [5 клеток]");
+    }
+
+    public static void Human()  // генерирует характеристики для расы людей (автоматический режим).
+    {
+        System.out.println();
+        System.out.println("Возраст: " + Start.RandAll(20, 90) + " лет.");
+        System.out.println("Рост: " + Start.RandAll(152, 184) + " см.");
+        System.out.println("Вес: " + Start.RandAll(60, 112) + " кг.");
+        System.out.println("Размер: Средний.");
+        System.out.println("Скорость: 30 футов [6 клеток]");
+    }
+}
