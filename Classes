@@ -1,0 +1,14 @@
+public class Classes
+{
+    public static String[] ClassArray()
+    {
+        String[] class_array = {"Варвар","Бард","Жрец","Друид","Воин","Монах","Паладин","Следопыт","Плут",
+                "Чародей","Колдун","Волшебник"};
+        return class_array;
+    }
+
+    public static void Barbarian()
+    {
+
+    }
+}
